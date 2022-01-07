@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <div class="card" style="width: 18rem;">
+        {% for i in comments %}
+            <div class="card-body">
+                <h5 class="card-title">{{ i.title }}</h5>
+                <h5 class="card-title">{{ i.created_at }}</h5>
+                <p class="card-text">
+                    {{ i.text }}</p>
+                <a href="#" class="btn btn-primary">More</a>
+            </div>
+        {% endfor %}
+    </div>
+
+{% endblock %}

@@ -1,0 +1,13 @@
+
+body {
+    color: aqua;
+    background: orange;
+    width: 600px;
+    height: 400px;
+    font-size: 36px;
+    border: none;
+}
+
+h2 {
+    font-size: 100px;
+}
