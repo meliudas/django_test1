@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+<meta charset="UTF-8">
+<title>Объявления</title>
+{% block content %}
+    {% csrf_token %}
+    {% for advert in adverts %}
+        <div class="card mb-3" style="max-width: 540px;">
+            <div class="row g-0">
+                <div class="col-md-4">
+                    <img src="{{ advert.image.url }}" class="img-fluid rounded-start" alt="...">
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ advert.title }}</h5>
+                        <p class="card-text"></p>
+                        <a href="{% url 'ad_detail' %}" class="btn btn-primary">
+                            Подробнее
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+{% endblock %}
+

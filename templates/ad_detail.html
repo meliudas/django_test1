@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+<meta charset="UTF-8">
+<title>Объявления</title>
+{% block content %}
+    {% csrf_token %}
+        <div class="card" style="width: 50rem;">
+            <img src={{ advert.image.url }}  class="card-img-top"
+                 alt="...">
+            <form>
+                <div class="card-body">
+                    <h5 class="card-title">{{ advert.title }}</h5>
+                    <p class="card-text">{{ advert.description }}</p>
+                </div>
+            </form>
+        </div>
+{% endblock %}

@@ -1,9 +1,25 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <form method="post">
-        {{ form.as_p }}
-        {% csrf_token %}
-        <p><input type="submit" value="Log-in"></p>
-    </form>
+    <div class="container">
+        <main class="form-login">
+            <form method="post">
+                {% csrf_token %}
+                <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
+                {% include 'messages.html' %}
+                <div class="form-floating">
+                    <input type="text" name="username" class="form-control" id="floatingInput"
+                           placeholder="name@example.com">
+                    <label for="floatingInput">Email address</label>
+                </div>
+                <div class="form-floating">
+                    <input type="password" name="password" class="form-control" id="floatingPassword"
+                           placeholder="Password">
+                    <label for="floatingPassword">Password</label>
+                </div>
+                <button class="w-100 btn btn-lg btn-primary" type="submit">Sign in</button>
+            </form>
+        </main>
+
+    </div>
 {% endblock %}

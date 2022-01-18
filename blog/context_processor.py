@@ -1,6 +1,6 @@
 from django.core.exceptions import ObjectDoesNotExist
 
-from blog.models import Category, Post, Author, CastomUser
+from blog.models import Category, Post, Author, CustomUser
 
 
 def asd(request):
@@ -12,7 +12,7 @@ def asd(request):
             cat_list.append(c.id)
     cat = categories.filter(id__in=cat_list)
     authors = Author.objects.all()
-    users = User.objects.all()
+    users = CustomUser.objects.all()
     try:
         category_fan = Category.objects.get(title='Фантастика')
     except ObjectDoesNotExist:
@@ -21,4 +21,5 @@ def asd(request):
     params = {'categories': cat,
               'fan': category_fan, 'authors': authors,
               'users': users}
-    return params
+
+
